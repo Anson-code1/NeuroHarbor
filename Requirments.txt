@@ -1,3 +1,0 @@
-clarifai-grpc
-streamlit
-streamlit-chat
