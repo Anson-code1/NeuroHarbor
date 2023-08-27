@@ -2,3 +2,4 @@ clarifai-grpc
 clarifai_utils
 streamlit
 streamlit-chat
+langchain
