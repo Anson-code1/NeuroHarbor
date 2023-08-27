@@ -3,4 +3,3 @@ clarifai
 streamlit
 streamlit-chat
 langchain
-ClarifaiAuthHelper
