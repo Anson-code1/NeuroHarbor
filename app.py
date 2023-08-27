@@ -56,7 +56,6 @@ if len(st.session_state.messages) > 1:
     st.button('Clear Chat', on_click=clear_chat)
 
 
-st.set_page_config(layout="wide")
 
 ClarifaiStreamlitCSS.insert_default_css(st)
 
