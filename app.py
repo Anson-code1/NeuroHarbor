@@ -1,6 +1,7 @@
 import streamlit as st
 from streamlit_chat import message  # Assuming this library exists for the purpose of the example
-from langchain.llms import llama  # Import hypothetical 'llama' library for AI-based responses
+from langchain.llms import Clarifai
+llm = Clarifai(pat=clarifai_pat, user_id='meta', app_id='Llama-2', model_id='llama2-13b-chat')
 
 # Function to clear the chat messages
 def clear_chat():
