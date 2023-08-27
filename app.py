@@ -2,6 +2,10 @@ import streamlit as st
 from streamlit_chat import message  # Assuming this library exists for the purpose of the example
 import langchain
 from langchain.llms import Clarifai
+secrets_auth = ClarifaiAuthHelper.from_streamlit(st)
+pat = load_pat()
+secrets_auth._pat = pat
+secrets_stub = create_stub(secrets_auth)  # installer's stub (PAT)
 llm = Clarifai(pat=clarifai_pat, user_id='meta', app_id='Llama-2', model_id='llama2-13b-chat')
 
 # Function to clear the chat messages
