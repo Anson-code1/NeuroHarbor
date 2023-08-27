@@ -1,4 +1,5 @@
 clarifai-grpc
+clarifai_pat
 clarifai_utils
 streamlit
 streamlit-chat
