@@ -21,7 +21,7 @@ st.title("NeuroHarbor")
 
 
 if "messages" not in st.session_state:
-    st.session_state["messages"] = [{"role": "assistant", "content": "Say something to get started!"}]
+    st.session_state["messages"] = [{"role": "assistant", "content": "Hello I am NeuroHarbor"}]
 
 
 with st.form("chat_input", clear_on_submit=True):
