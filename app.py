@@ -48,7 +48,7 @@ if user_prompt:
     
     message(user_prompt, is_user=True)
 
-    response = llama.get_response(user_prompt)  # get response from llama2 API (in our case from Workflow we created before)
+    response = clarifai.get_response(user_prompt)  # get response from llama2 API (in our case from Workflow we created before)
 
     msg = {"role": "assistant", "content": response}
 
