@@ -1,5 +1,5 @@
 import streamlit as st
-import llama-llms
+import llama-llm
 from streamlit_chat import message
 from clarifai.auth.helper import ClarifaiAuthHelper
 from clarifai.modules.css import ClarifaiStreamlitCSS
@@ -49,7 +49,7 @@ if user_prompt:
     
     message(user_prompt, is_user=True)
 
-    response = llama.get_response(user_prompt)  # get response from llama2 API (in our case from Workflow we created before)
+    response = llama-llm.get_response(user_prompt)  # get response from llama2 API (in our case from Workflow we created before)
 
     msg = {"role": "assistant", "content": response}
 
