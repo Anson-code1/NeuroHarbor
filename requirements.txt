@@ -1,6 +1,5 @@
-clarifai-grpc
-clarifai_pat
-clarifai_utils
+clarifai-grpc 
+clarifai
 streamlit
 streamlit-chat
 langchain
