@@ -1,4 +1,5 @@
 import streamlit as st
+from clarifai.auth.helper import ClarifaiAuthHelper
 from streamlit_chat import message  # Assuming this library exists for the purpose of the example
 import langchain
 from langchain.llms import Clarifai
