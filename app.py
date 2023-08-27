@@ -1,5 +1,4 @@
 import streamlit as st
-from clarifai import llama
 from streamlit_chat import message
 from clarifai.auth.helper import ClarifaiAuthHelper
 from clarifai.modules.css import ClarifaiStreamlitCSS
@@ -9,6 +8,7 @@ from clarifai_grpc.grpc.api.status import status_code_pb2
 from streamlit_chat import message  # Assuming this library exists for the purpose of the example
 import langchain
 from langchain.llms import Clarifai
+from langchain.llms import llama
 from clarifai_utils.modules.css import ClarifaiStreamlitCSS
 auth = ClarifaiAuthHelper.from_streamlit(st)
 stub = create_stub(auth)
