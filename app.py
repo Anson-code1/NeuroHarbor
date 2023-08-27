@@ -1,6 +1,6 @@
 import streamlit as st
 from streamlit_chat import message  # Assuming this library exists for the purpose of the example
-import llama  # Import hypothetical 'llama' library for AI-based responses
+from langchain.llms import llama  # Import hypothetical 'llama' library for AI-based responses
 
 # Function to clear the chat messages
 def clear_chat():
