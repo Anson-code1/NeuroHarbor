@@ -1,5 +1,6 @@
 import streamlit as st
 from streamlit_chat import message  # Assuming this library exists for the purpose of the example
+import langchain
 from langchain.llms import Clarifai
 llm = Clarifai(pat=clarifai_pat, user_id='meta', app_id='Llama-2', model_id='llama2-13b-chat')
 
