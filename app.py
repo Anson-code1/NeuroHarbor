@@ -1,13 +1,15 @@
 import streamlit as st
 from clarifai.auth.helper import ClarifaiAuthHelper
 from clarifai.modules.css import ClarifaiStreamlitCSS
+from clarifai.client import create_stub
 from clarifai_grpc.grpc.api import resources_pb2, service_pb2
 from clarifai_grpc.grpc.api.status import status_code_pb2
 from streamlit_chat import message  # Assuming this library exists for the purpose of the example
 import langchain
 from langchain.llms import Clarifai
 auth = ClarifaiAuthHelper.from_streamlit(st)
-secrets_stub = create_stub(secrets_auth)
+stub = create_stub(auth)
+userDataObject = auth.get_user_app_id_proto()
 llm = Clarifai(pat=clarifai_pat, user_id='meta', app_id='Llama-2', model_id='llama2-13b-chat')
 
 # Function to clear the chat messages
