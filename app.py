@@ -7,6 +7,7 @@ from clarifai_grpc.grpc.api.status import status_code_pb2
 from streamlit_chat import message  # Assuming this library exists for the purpose of the example
 import langchain
 from langchain.llms import Clarifai
+from clarifai_utils.modules.css import ClarifaiStreamlitCSS
 auth = ClarifaiAuthHelper.from_streamlit(st)
 stub = create_stub(auth)
 userDataObject = auth.get_user_app_id_proto()
@@ -55,3 +56,10 @@ if user_prompt:
 # Option to clear chat
 if len(st.session_state.messages) > 1:
     st.button('Clear Chat', on_click=clear_chat)
+
+
+st.set_page_config(layout="wide")
+
+ClarifaiStreamlitCSS.insert_default_css(st)
+
+st.markdown("Please select a specific page from the sidebar to the left")
