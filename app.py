@@ -11,7 +11,6 @@ from clarifai_utils.modules.css import ClarifaiStreamlitCSS
 auth = ClarifaiAuthHelper.from_streamlit(st)
 stub = create_stub(auth)
 userDataObject = auth.get_user_app_id_proto()
-llm = Clarifai(pat=clarifai_pat, user_id='meta', app_id='Llama-2', model_id='llama2-13b-chat')
 # Function to clear the chat messages
 def clear_chat():
     st.session_state.messages = [{"role": "assistant", "content": "Hello! How can I assist you today?"}]
