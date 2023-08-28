@@ -13,6 +13,13 @@ from langchain.llms import Clarifai
 from clarifai_utils.modules.css import ClarifaiStreamlitCSS
 from clarifai.client.workflow import Workflow
 from dotenv import load_dotenv
+# Fetch user ID from environment variables
+user_id = os.getenv('CLARIFAI_USER_ID')
+
+if not user_id:
+    raise ValueError("Need 'user_id' to not be empty in the query params or user CLARIFAI_USER_ID env var")
+
+# Now, proceed to use 'user_id' in your Clarifai API calls.
 clarifai_pat = os.getenv('CLARIFAI_PAT')
 user_id = os.getenv('CLARIFAI_USER_ID')
 load_dotenv()
