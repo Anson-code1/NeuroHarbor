@@ -10,6 +10,11 @@ import langchain
 from langchain.llms import Clarifai
 from clarifai_utils.modules.css import ClarifaiStreamlitCSS
 from clarifai.client.workflow import Workflow
+from dotenv import load_dotenv
+load_dotenv()
+
+import os
+clarifai_pat = os.getenv('CLARIFAI_PAT')
 auth = ClarifaiAuthHelper.from_streamlit(st)
 stub = create_stub(auth)
 userDataObject = auth.get_user_app_id_proto()
