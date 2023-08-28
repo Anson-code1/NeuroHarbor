@@ -15,16 +15,16 @@ stub = create_stub(auth)
 userDataObject = auth.get_user_app_id_proto()
 
 # Workflow Predict
-workflow = Workflow("https://clarifai.com/anson/Idea/workflows/NeuroHarbor") # Example: https://clarifai.com/clarifai/main/workflows/Face-Sentiment
+workflow = Workflow("https://clarifai.com/anson/Idea/workflows/NeuroHarbor") 
 workflow_prediction = workflow.predict_by_url(url="https://clarifai.com/anson/Idea/workflows/NeuroHarbor", input_type="text") # Supports image, text, audio, video
 
 # Customizing Workflow Inference Output
-workflow = Workflow(user_id="user_id", app_id="app_id", workflow_id="workflow_id",
+workflow = Workflow(user_id="anson", app_id="NeuroHarbor", workflow_id="NeuroHarbor",
                   output_config={"min_value": 0.98}) # Return predictions having prediction confidence > 0.98
 workflow_prediction = workflow.predict_by_filepath(filepath="local_filepath", input_type="text") # Supports image, text, audio, video
 
 def clear_chat():
-    st.session_state.messages = [{"role": "assistant", "content": "Hello I am NeuroHarbor"}]
+    st.session_state.messages = [{"role": "assistant", "content": "Welcome to NeuroHarbor, Navigate your mind, Find your Harbor. How may I help you today?"}]
 
 
 st.title("NeuroHarbor")
