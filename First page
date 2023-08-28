@@ -12,7 +12,7 @@ ClarifaiStreamlitCSS.insert_default_css(st)
 auth = ClarifaiAuthHelper.from_streamlit(st)
 stub = create_stub(auth)
 userDataObject = auth.get_user_app_id_proto()
-lister = ClarifaiResourceLister(stub, auth.user_id, auth.app_id, page_size=16)
+lister = ClarifaiResourceLister(stub, auth.anson, auth.NeuroHarbor, page_size=16)
 st.title("Simple example to list inputs")
 
 with st.form(key="data-inputs"):
