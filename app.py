@@ -1,4 +1,5 @@
 import streamlit as st
+import llama
 from streamlit_chat import message
 from clarifai.auth.helper import ClarifaiAuthHelper
 from clarifai.modules.css import ClarifaiStreamlitCSS
@@ -9,9 +10,19 @@ from streamlit_chat import message  # Assuming this library exists for the purpo
 import langchain
 from langchain.llms import Clarifai
 from clarifai_utils.modules.css import ClarifaiStreamlitCSS
+from clarifai.client.workflow import Workflow
 auth = ClarifaiAuthHelper.from_streamlit(st)
 stub = create_stub(auth)
 userDataObject = auth.get_user_app_id_proto()
+
+# Workflow Predict
+workflow = Workflow("workflow_url") # Example: https://clarifai.com/clarifai/main/workflows/Face-Sentiment
+workflow_prediction = workflow.predict_by_url(url="url", input_type="image") # Supports image, text, audio, video
+
+# Customizing Workflow Inference Output
+workflow = Workflow(user_id="user_id", app_id="app_id", workflow_id="workflow_id",
+                  output_config={"min_value": 0.98}) # Return predictions having prediction confidence > 0.98
+workflow_prediction = workflow.predict_by_filepath(filepath="local_filepath", input_type="text") # Supports image, text, audio, video
 
 def clear_chat():
     st.session_state.messages = [{"role": "assistant", "content": "Hello I am NeuroHarbor"}]
@@ -48,7 +59,8 @@ if user_prompt:
     
     message(user_prompt, is_user=True)
 
-    response = llama.get_response(user_prompt)  # get response from llama2 API (in our case from Workflow we created before)
+
+    response = workflow.get_response(user_prompt)  # get response from llama2 API (in our case from Workflow we created before)
 
     msg = {"role": "assistant", "content": response}
 
