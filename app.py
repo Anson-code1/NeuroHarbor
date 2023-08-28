@@ -1,5 +1,5 @@
 import streamlit as st
-import dotnev
+import dotenv
 from streamlit_chat import message
 from clarifai.auth.helper import ClarifaiAuthHelper
 from clarifai.modules.css import ClarifaiStreamlitCSS
