@@ -15,7 +15,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 import os
-clarifai_pat = os.getenv('CLARIFAI_PAT')
+clarifai_pat = os.getenv('ansonpat')
 auth = ClarifaiAuthHelper.from_streamlit(st)
 stub = create_stub(auth)
 userDataObject = auth.get_user_app_id_proto()
