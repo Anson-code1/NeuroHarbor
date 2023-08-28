@@ -26,7 +26,7 @@ stub = service_pb2_grpc.V2Stub(channel)
 
 metadata = (('authorization', 'Key ' + PAT),)
 
-userDataObject = resources_pb2.UserAppIDSet(user_id=USER_ID, app_id=APP_ID)
+userDataObject = resources_pb2.UserAppIDSet(user_id=anson, app_id=NeuroHarbor)
 
 post_workflow_results_response = stub.PostWorkflowResults(
     service_pb2.PostWorkflowResultsRequest(
