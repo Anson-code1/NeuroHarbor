@@ -16,7 +16,7 @@ userDataObject = auth.get_user_app_id_proto()
 
 # Workflow Predict
 workflow = Workflow("https://clarifai.com/anson/Idea/workflows/NeuroHarbor") # Example: https://clarifai.com/clarifai/main/workflows/Face-Sentiment
-workflow_prediction = workflow.predict_by_url(url="url", input_type="image") # Supports image, text, audio, video
+workflow_prediction = workflow.predict_by_url(url="https://clarifai.com/anson/Idea/workflows/NeuroHarbor", input_type="text") # Supports image, text, audio, video
 
 # Customizing Workflow Inference Output
 workflow = Workflow(user_id="user_id", app_id="app_id", workflow_id="workflow_id",
