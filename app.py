@@ -1,6 +1,5 @@
 import os
 import streamlit as st
-import dotenv
 from streamlit_chat import message
 from clarifai.auth.helper import ClarifaiAuthHelper
 from clarifai.modules.css import ClarifaiStreamlitCSS
@@ -12,22 +11,10 @@ import langchain
 from langchain.llms import Clarifai
 from clarifai_utils.modules.css import ClarifaiStreamlitCSS
 from clarifai.client.workflow import Workflow
-from dotenv import load_dotenv
-# Fetch user ID from environment variables
-user_id = os.getenv('CLARIFAI_USER_ID')
-
-if not user_id:
-    raise ValueError("Need 'user_id' to not be empty in the query params or user CLARIFAI_USER_ID env var")
-
-# Now, proceed to use 'user_id' in your Clarifai API calls.
-clarifai_pat = os.getenv('CLARIFAI_PAT')
-user_id = os.getenv('CLARIFAI_USER_ID')
-load_dotenv()
 
 auth = ClarifaiAuthHelper.from_streamlit(st)
 stub = create_stub(auth)
 userDataObject = auth.get_user_app_id_proto()
-os.environ['CLARIFAI_USER_ID'] = 'anson'
 # Workflow Predict
 workflow = Workflow("https://clarifai.com/anson/Idea/workflows/NeuroHarbor") 
 workflow_prediction = workflow.predict_by_url(url="https://clarifai.com/anson/Idea/workflows/NeuroHarbor", input_type="text") # Supports image, text, audio, video
