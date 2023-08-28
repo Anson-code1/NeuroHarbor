@@ -1,3 +1,4 @@
+import os
 import streamlit as st
 import dotenv
 from streamlit_chat import message
@@ -14,7 +15,6 @@ from clarifai.client.workflow import Workflow
 from dotenv import load_dotenv
 load_dotenv()
 
-import os
 clarifai_pat = os.getenv('ansonpat')
 auth = ClarifaiAuthHelper.from_streamlit(st)
 stub = create_stub(auth)
