@@ -1,3 +1,4 @@
+os.environ['CLARIFAI_USER_ID'] = 'anson'
 import streamlit as st
 import dotenv
 from streamlit_chat import message
