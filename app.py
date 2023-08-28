@@ -1,4 +1,3 @@
-os.environ['CLARIFAI_USER_ID'] = 'anson'
 import streamlit as st
 import dotenv
 from streamlit_chat import message
@@ -20,7 +19,7 @@ clarifai_pat = os.getenv('ansonpat')
 auth = ClarifaiAuthHelper.from_streamlit(st)
 stub = create_stub(auth)
 userDataObject = auth.get_user_app_id_proto()
-
+os.environ['CLARIFAI_USER_ID'] = 'anson'
 # Workflow Predict
 workflow = Workflow("https://clarifai.com/anson/Idea/workflows/NeuroHarbor") 
 workflow_prediction = workflow.predict_by_url(url="https://clarifai.com/anson/Idea/workflows/NeuroHarbor", input_type="text") # Supports image, text, audio, video
