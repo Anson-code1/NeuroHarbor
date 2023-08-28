@@ -15,7 +15,7 @@ stub = create_stub(auth)
 userDataObject = auth.get_user_app_id_proto()
 
 # Workflow Predict
-workflow = Workflow("workflow_url") # Example: https://clarifai.com/clarifai/main/workflows/Face-Sentiment
+workflow = Workflow("https://clarifai.com/anson/Idea/workflows/NeuroHarbor") # Example: https://clarifai.com/clarifai/main/workflows/Face-Sentiment
 workflow_prediction = workflow.predict_by_url(url="url", input_type="image") # Supports image, text, audio, video
 
 # Customizing Workflow Inference Output
