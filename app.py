@@ -11,6 +11,8 @@ import langchain
 from langchain.llms import Clarifai
 from clarifai_utils.modules.css import ClarifaiStreamlitCSS
 from clarifai.client.workflow import Workflow
+user_id = 'anson'
+
 
 auth = ClarifaiAuthHelper.from_streamlit(st)
 stub = create_stub(auth)
