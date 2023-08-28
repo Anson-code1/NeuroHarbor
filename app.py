@@ -13,6 +13,8 @@ from langchain.llms import Clarifai
 from clarifai_utils.modules.css import ClarifaiStreamlitCSS
 from clarifai.client.workflow import Workflow
 from dotenv import load_dotenv
+clarifai_pat = os.getenv('CLARIFAI_PAT')
+user_id = os.getenv('anson')
 load_dotenv()
 
 clarifai_pat = os.getenv('ansonpat')
